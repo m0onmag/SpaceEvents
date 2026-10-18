@@ -1,5 +1,6 @@
 package ru.moonmag;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.moonmag.command.SpaceEventsCommand;
@@ -68,11 +69,12 @@ public final class SpaceEvents extends JavaPlugin {
 
     private void banner(String title, String status, String extra) {
         String border = "§x§f§f§7§c§0§0";
-        getLogger().info(border + "╔");
-        getLogger().info(border + "║ §f" + title);
-        getLogger().info(border + "║ " + status + " §fАвтор: §x§f§f§6§e§0§0MoonMag");
-        if (extra != null) getLogger().info(border + "║ §f" + extra);
-        getLogger().info(border + "║ " + LINK);
-        getLogger().info(border + "╚");
+        org.bukkit.command.CommandSender console = Bukkit.getConsoleSender();
+        console.sendMessage(border + "╔");
+        console.sendMessage(border + "║ §f" + title);
+        console.sendMessage(border + "║ " + status + " §fАвтор: §x§f§f§6§e§0§0MoonMag");
+        if (extra != null) console.sendMessage(border + "║ §f" + extra);
+        console.sendMessage(border + "║ " + LINK);
+        console.sendMessage(border + "╚");
     }
 }
