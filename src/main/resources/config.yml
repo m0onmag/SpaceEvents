@@ -31,6 +31,12 @@ metrics: true
 # Логи в консоль: true - писать, false - молчать
 log: true
 
+# Плейсхолдеры PlaceholderAPI:
+#   %spaceevents_next_event%       - время до ближайшего ивента, например 2ч 14м 5с
+#   %spaceevents_next_event_name%  - название ближайшего ивента
+#   %spaceevents_next_event_time%  - время запуска ближайшего ивента в формате HH:mm
+# Если ивентов нет, выводится значение из messages.placeholder-none
+
 # Ивенты. Время обязательно в кавычках ('12:00'), иначе yaml прочитает его как число.
 # Дни: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY или ALL (каждый день).
 events:
